@@ -223,6 +223,8 @@ footer {
 
 /* Pour rendre le site un peu plus responsive */
 @media (max-width: 768px) {
+
+
   .bandeau {
     flex-direction: column;
     padding: 20px;
@@ -230,8 +232,7 @@ footer {
 
   .logo-gauche img,
   .logo-droite img {
-    height: 200px;
-  }
+    height: 200px;  }
 
   .logo-centre img {
     height: 150px;
