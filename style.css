@@ -175,10 +175,6 @@ button:hover {
 }
 
 
-button:hover {
-  background-color: #007b8a;
-}
-
 /* Pied de page */
 footer {
   text-align: center;
@@ -221,72 +217,70 @@ footer {
   font-size: 17px;
 }
 
+
+/* === FORMULAIRE ENRICHISSANT === */
+/* (styles spécifiques au formulaire complexe) */
+
+/* Mise en page du formulaire enrichi */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1800px;
+  margin: auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  gap: 40px;
+  flex-wrap: wrap; /* Pour éviter les débordements sur petits écrans */
+}
+
+/* Section image à gauche */
+.image-section {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 1099px;
+  height: auto;
+  aspect-ratio: 1099 / 913;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Section formulaire à droite */
+.form-section {
+  flex: 1;
+  padding-left: 40px;
+}
+
+/* Pour éviter que le formulaire soit trop étroit */
+.form-section form {
+  max-width: 100%;
+}
+
 /* Pour rendre le site un peu plus responsive */
 @media (max-width: 768px) {
-
-
-  .bandeau {
+  .container {
     flex-direction: column;
     padding: 20px;
   }
 
-  .logo-gauche img,
-  .logo-droite img {
-    height: 200px;  }
-
-  .logo-centre img {
-    height: 150px;
+  .image-section, .form-section {
+    padding: 0;
   }
 
-  .presentation, .contact {
-    padding: 20px;
-    margin: 10px;
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
   }
 
-  body {
-    font-size: 17px;
+  .form-section {
+    width: 100%;
   }
-
-/* ===== MENU DE NAVIGATION FIXE ===== */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: #003366;
-  color: white;
-  padding: 10px 0;
-  z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin: 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  font-size: 17px;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #ffcc00;
-}
-
-/* Ajuste le padding du body pour ne pas cacher le contenu sous le menu */
-body {
-  padding-top: 60px;
-}
-
 }
