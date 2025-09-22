@@ -236,5 +236,14 @@
       zone.style.display = objet === "autres" ? "flex" : "none";
     }
   </script>
+<script>
+  document.querySelector("form").addEventListener("submit", function () {
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000); // recharge la page après 3 secondes
+  });
+</script>
+
+	
 </body>
 </html>
