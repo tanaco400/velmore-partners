@@ -213,7 +213,7 @@
 
   <div id="champAutreMontant" class="form-row" style="display:none;">
     <label for="montantAutre">Précisez le montant :</label>
-    <input type="number" id="montantAutre" name="montantAutre" min="1" step="100">
+    <input type="number" id="montantAutre" name="montantAutre" min="1000" step="100" inputmode="numeric">
   </div>
 
   <!-- Objet de l'emprunt -->
@@ -235,7 +235,7 @@
 
 
 
-        <input type="submit" value="Envoyer">
+   <input type="submit" value="Envoyer" onclick="prepareFinalFields()">
       </form>
     </div>
   </div>
@@ -250,6 +250,42 @@ function toggleAutreObjet(select) {
   const champ = document.getElementById('champAutreObjet');
   champ.style.display = select.value === 'autre' ? 'flex' : 'none';
 }
+
+// Préparer les champs finaux avant soumission
+function prepareFinalFields() {
+  const montantSelect = document.getElementById('montant');
+  const montantAutre = document.getElementById('montantAutre');
+  const objetSelect = document.getElementById('objet');
+  const objetAutre = document.getElementById('objetAutre');
+
+  // Créer ou mettre à jour les champs cachés
+  let montantFinal = document.getElementById('montantFinal');
+  if (!montantFinal) {
+    montantFinal = document.createElement('input');
+    montantFinal.type = 'hidden';
+    montantFinal.name = 'montantFinal';
+    montantFinal.id = 'montantFinal';
+    document.forms[0].appendChild(montantFinal);
+  }
+  montantFinal.value = montantSelect.value === 'autre' ? montantAutre.value + ' €' : montantSelect.value + ' €';
+
+  let objetFinal = document.getElementById('objetFinal');
+  if (!objetFinal) {
+    objetFinal = document.createElement('input');
+    objetFinal.type = 'hidden';
+    objetFinal.name = 'objetFinal';
+    objetFinal.id = 'objetFinal';
+    document.forms[0].appendChild(objetFinal);
+  }
+  objetFinal.value = objetSelect.value === 'autre' ? objetAutre.value : objetSelect.options[objetSelect.selectedIndex].text;
+}
+
+// Redirection manuelle si UseBasin ne la respecte pas
+document.forms[0].addEventListener('submit', function(e) {
+  setTimeout(function() {
+    window.location.href = "https://velmore-partners.org/merci.html";
+  }, 1500); // délai pour laisser UseBasin traiter
+});
 </script>
 
 	
