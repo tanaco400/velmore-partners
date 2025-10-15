@@ -197,6 +197,7 @@
         <fieldset>
   <legend>Informations financières</legend>
 
+  <!-- Montant souhaité -->
   <div class="form-row">
     <label for="montant">Montant souhaité :</label>
     <select id="montant" name="montant" required onchange="toggleAutreMontant(this)">
@@ -215,9 +216,10 @@
     <input type="number" id="montantAutre" name="montantAutre" min="1" step="100">
   </div>
 
+  <!-- Objet de l'emprunt -->
   <div class="form-row">
     <label for="objet">Objet de l'emprunt :</label>
-    <select id="objet" name="objet" onchange="toggleAutreObjet(this)">
+    <select id="objet" name="objet" required onchange="toggleAutreObjet(this)">
       <option value="tresorerie">Trésorerie</option>
       <option value="achat_materiels">Achat de matériels</option>
       <option value="rachat_credits">Rachats de crédits</option>
@@ -230,6 +232,7 @@
     <input type="text" id="objetAutre" name="objetAutre">
   </div>
 </fieldset>
+
 
 
         <input type="submit" value="Envoyer">
