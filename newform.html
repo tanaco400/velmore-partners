@@ -195,41 +195,59 @@
         </fieldset>
 
         <fieldset>
-          <legend>Informations financières</legend>
+  <legend>Informations financières</legend>
 
-          <div class="form-row">
-            <label for="montant">Montant souhaité :</label>
-            <select id="montant" name="montant" required>
-              <option value="">-- Sélectionnez un montant --</option>
-              <option value="10000">10 000€</option>
-              <option value="20000">20 000€</option>
-              <option value="30000">30 000€</option>
-              <option value="40000">40 000€</option>
-              <option value="50000">50 000€</option>
-            </select>
-          </div>
+  <div class="form-row">
+    <label for="montant">Montant souhaité :</label>
+    <select id="montant" name="montant" required onchange="toggleAutreMontant(this)">
+      <option value="">-- Sélectionnez un montant --</option>
+      <option value="10000">10 000€</option>
+      <option value="20000">20 000€</option>
+      <option value="30000">30 000€</option>
+      <option value="40000">40 000€</option>
+      <option value="50000">50 000€</option>
+      <option value="autre">Autre</option>
+    </select>
+  </div>
 
-          <div class="form-row">
-            <label for="objet">Objet de l'emprunt :</label>
-            <select id="objet" name="objet" onchange="afficherCommentaire()">
-              <option value="tresorerie">Trésorerie</option>
-              <option value="achat_materiels">Achat de matériels</option>
-              <option value="rachat_credits">Rachats de crédits</option>
-              <option value="autres">Autres</option>
-            </select>
-          </div>
+  <div id="champAutreMontant" class="form-row" style="display:none;">
+    <label for="montantAutre">Précisez le montant :</label>
+    <input type="number" id="montantAutre" name="montantAutre" min="1" step="100">
+  </div>
 
-          <div id="commentaireAutre" style="display:none;" class="form-row">
-            <label for="commentaire">Précisez :</label>
-            <textarea id="commentaire" name="commentaire" rows="4" style="width:250px;"></textarea>
-          </div>
-        </fieldset>
+  <div class="form-row">
+    <label for="objet">Objet de l'emprunt :</label>
+    <select id="objet" name="objet" onchange="toggleAutreObjet(this)">
+      <option value="tresorerie">Trésorerie</option>
+      <option value="achat_materiels">Achat de matériels</option>
+      <option value="rachat_credits">Rachats de crédits</option>
+      <option value="autre">Autre</option>
+    </select>
+  </div>
+
+  <div id="champAutreObjet" class="form-row" style="display:none;">
+    <label for="objetAutre">Précisez l’objet :</label>
+    <input type="text" id="objetAutre" name="objetAutre">
+  </div>
+</fieldset>
+
 
         <input type="submit" value="Envoyer">
       </form>
     </div>
   </div>
 
+<script>
+function toggleAutreMontant(select) {
+  const champ = document.getElementById('champAutreMontant');
+  champ.style.display = select.value === 'autre' ? 'flex' : 'none';
+}
+
+function toggleAutreObjet(select) {
+  const champ = document.getElementById('champAutreObjet');
+  champ.style.display = select.value === 'autre' ? 'flex' : 'none';
+}
+</script>
 
 	
 </body>
