@@ -34,7 +34,7 @@
       flex: 2;
       padding: 30px;
       overflow-y: auto;
-      max-width: 600px; /* limite la largeur globale */
+      max-width: 600px;
     }
 
     /* Alignement label + champ */
@@ -45,14 +45,14 @@
     }
 
     .form-row label {
-      width: 140px; /* largeur fixe des labels */
+      width: 140px;
       font-weight: bold;
     }
 
     .form-row input,
     .form-row select,
     .form-row textarea {
-      width: 250px; /* largeur par défaut des champs */
+      width: 250px;
       padding: 6px;
       border: 1px solid #aaa;
       border-radius: 4px;
@@ -63,11 +63,11 @@
     #adresse,
     #adresse_2,
     #email {
-      width: 300px; /* un peu plus large */
+      width: 300px;
     }
 
     #code_postal {
-      width: 120px; /* plus court */
+      width: 120px;
     }
 
     /* Style fieldset */
@@ -89,7 +89,7 @@
       color: white;
       border-radius: 5px;
       cursor: pointer;
-      margin-left: 140px; /* aligné avec les champs */
+      margin-left: 140px;
     }
 
     input[type="submit"]:hover {
@@ -101,19 +101,16 @@
 
   <div class="container">
     <div class="image-section">
-      <img src="fond_western_ouest.png" alt="Illustration" >
+      <img src="fond_western_ouest.png" alt="Illustration">
     </div>
 
     <div class="form-section">
-   <form action="https://usebasin.com/f/9f7d1f130b70" method="POST" onsubmit="return handleSubmit(event)">
+      <form id="mainForm" action="https://usebasin.com/f/9f7d1f130b70" method="POST">
 
-
-
- <!-- Options cachées -->
-  <input type="hidden" name="_captcha" value="false">
- <input type="hidden" name="_next" value="https://velmore-partners.org/merci.html">
-  <input type="hidden" name="_template" value="table">
-	 
+        <!-- Options cachées -->
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://velmore-partners.org/merci.html">
+        <input type="hidden" name="_template" value="table">
 
         <fieldset>
           <legend>Identité</legend>
@@ -196,59 +193,63 @@
         </fieldset>
 
         <fieldset>
-  <legend>Informations financières</legend>
+          <legend>Informations financières</legend>
 
-  <!-- Montant souhaité -->
-  <div class="form-row">
-    <label for="montant">Montant souhaité :</label>
-    <select id="montant" name="montant" required onchange="toggleAutreMontant(this)">
-      <option value="">-- Sélectionnez un montant --</option>
-      <option value="10000">10 000€</option>
-      <option value="20000">20 000€</option>
-      <option value="30000">30 000€</option>
-      <option value="40000">40 000€</option>
-      <option value="50000">50 000€</option>
-      <option value="autre">Autre</option>
-    </select>
-  </div>
+          <!-- Montant souhaité -->
+          <div class="form-row">
+            <label for="montant">Montant souhaité :</label>
+            <select id="montant" name="montant" required onchange="toggleAutreMontant(this)">
+              <option value="">-- Sélectionnez un montant --</option>
+              <option value="10000">10 000€</option>
+              <option value="20000">20 000€</option>
+              <option value="30000">30 000€</option>
+              <option value="40000">40 000€</option>
+              <option value="50000">50 000€</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
 
-  <div id="champAutreMontant" class="form-row" style="display:none;">
-    <label for="montantAutre">Précisez le montant :</label>
-    <input type="text" id="montantAutre" name="montantAutre" pattern="^[0-9]{4,6}$" inputmode="numeric" placeholder="Ex: 90500">
+          <div id="champAutreMontant" class="form-row" style="display:none;">
+            <label for="montantAutre">Précisez le montant :</label>
+            <input type="text" id="montantAutre" name="montantAutre" pattern="^[0-9]{4,6}$" inputmode="numeric" placeholder="Ex: 90500">
+          </div>
 
-  </div>
+          <!-- Objet de l'emprunt -->
+          <div class="form-row">
+            <label for="objet">Objet de l'emprunt :</label>
+            <select id="objet" name="objet" required onchange="toggleAutreObjet(this)">
+              <option value="tresorerie">Trésorerie</option>
+              <option value="achat_materiels">Achat de matériels</option>
+              <option value="rachat_credits">Rachats de crédits</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
 
-  <!-- Objet de l'emprunt -->
-  <div class="form-row">
-    <label for="objet">Objet de l'emprunt :</label>
-    <select id="objet" name="objet" required onchange="toggleAutreObjet(this)">
-      <option value="tresorerie">Trésorerie</option>
-      <option value="achat_materiels">Achat de matériels</option>
-      <option value="rachat_credits">Rachats de crédits</option>
-      <option value="autre">Autre</option>
-    </select>
-  </div>
+          <div id="champAutreObjet" class="form-row" style="display:none;">
+            <label for="objetAutre">Précisez l'objet :</label>
+            <input type="text" id="objetAutre" name="objetAutre">
+          </div>
+        </fieldset>
 
-  <div id="champAutreObjet" class="form-row" style="display:none;">
-    <label for="objetAutre">Précisez l’objet :</label>
-    <input type="text" id="objetAutre" name="objetAutre">
-  </div>
-</fieldset>
+        <div id="confirmationMessage" style="display:none; margin-left:140px; margin-top:20px;">
+          <span style="font-weight:bold; color:green;">✔ Votre demande a été envoyée. Redirection en cours...</span>
+          <div style="margin-top:10px; width:100px; height:10px; background:#ccc; border-radius:5px; overflow:hidden;">
+            <div id="progressBar" style="width:0%; height:100%; background:#2a7ae2;"></div>
+          </div>
+        </div>
 
-<div id="confirmationMessage" style="display:none; margin-left:140px; margin-top:20px;">
-  <span style="font-weight:bold; color:green;">✔ Votre demande a été envoyée. Redirection en cours...</span>
-  <div style="margin-top:10px; width:100px; height:10px; background:#ccc; border-radius:5px; overflow:hidden;">
-    <div id="progressBar" style="width:0%; height:100%; background:#2a7ae2;"></div>
-  </div>
-</div>
-
-
-   <input type="submit" value="Envoyer" onclick="prepareFinalFields()">
+        <input type="submit" value="Envoyer">
       </form>
     </div>
   </div>
 
 <script>
+// ========================================
+// CONFIGURATION - MODIFIEZ CETTE LIGNE !
+// ========================================
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyLSo-MCQVFWUUjJr-wBZYVCpxogcOL86rypamHWSigRZmh5lbGwwlMlGKZN7dzxQBN/exec';
+
+
 function toggleAutreMontant(select) {
   const champ = document.getElementById('champAutreMontant');
   champ.style.display = select.value === 'autre' ? 'flex' : 'none';
@@ -275,17 +276,18 @@ function prepareFinalFields() {
     montantFinal.id = 'montantFinal';
     document.forms[0].appendChild(montantFinal);
   }
+  
   if (montantSelect.value === 'autre') {
-  const montant = montantAutre.value.trim();
-  if (!/^[0-9]{4,6}$/.test(montant)) {
-    alert("Veuillez saisir un montant valide entre 1000 et 999999.");
-    montantAutre.focus();
-    return false; // empêche la soumission
+    const montant = montantAutre.value.trim();
+    if (!/^[0-9]{4,6}$/.test(montant)) {
+      alert("Veuillez saisir un montant valide entre 1000 et 999999.");
+      montantAutre.focus();
+      return false;
+    }
+    montantFinal.value = montant + ' €';
+  } else {
+    montantFinal.value = montantSelect.value + ' €';
   }
-  montantFinal.value = montant + ' €';
-} else {
-  montantFinal.value = montantSelect.value + ' €';
-}
 
   let objetFinal = document.getElementById('objetFinal');
   if (!objetFinal) {
@@ -296,43 +298,71 @@ function prepareFinalFields() {
     document.forms[0].appendChild(objetFinal);
   }
   objetFinal.value = objetSelect.value === 'autre' ? objetAutre.value : objetSelect.options[objetSelect.selectedIndex].text;
+  
+  return true;
 }
 
-// Redirection manuelle si UseBasin ne la respecte pas
-document.forms[0].addEventListener('submit', function(e) {
-  setTimeout(function() {
-    window.location.href = "https://velmore-partners.org/merci.html";
-  }, 1500); // délai pour laisser UseBasin traiter
-});
-</script>
+// Fonction pour envoyer vers Google Sheets
+function sendToGoogleSheets(formData) {
+  fetch(GOOGLE_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams(formData)
+  })
+  .then(() => {
+    console.log('Données envoyées à Google Sheets');
+  })
+  .catch((error) => {
+    console.error('Erreur Google Sheets:', error);
+  });
+}
 
-<script>
-function handleSubmit(e) {
+// Gestion de la soumission du formulaire
+document.getElementById('mainForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Valider et préparer les champs
+  if (!prepareFinalFields()) {
+    return false;
+  }
+  
+  // Collecter toutes les données du formulaire
+  const formData = new FormData(this);
+  const formObject = {};
+  formData.forEach((value, key) => {
+    formObject[key] = value;
+  });
+  
+  // Afficher le message de confirmation
   const message = document.getElementById('confirmationMessage');
   const progress = document.getElementById('progressBar');
-
-  // Affiche le message
   message.style.display = 'block';
-
+  
   // Animation de la barre de progression
   let width = 0;
   const interval = setInterval(() => {
     width += 5;
     progress.style.width = width + '%';
     if (width >= 100) clearInterval(interval);
-  }, 100); // 100ms x 20 = 2s
-
+  }, 100);
+  
+  // Envoyer vers Google Sheets (en parallèle)
+  if (GOOGLE_SCRIPT_URL !== 'COLLEZ_VOTRE_URL_ICI') {
+    sendToGoogleSheets(formObject);
+  }
+  
+  // Soumettre le formulaire vers UseBasin
+  this.submit();
+  
   // Redirection après 2 secondes
   setTimeout(function() {
     window.location.href = "https://velmore-partners.org/merci.html";
   }, 2000);
-
-  return true;
-}
+});
 </script>
 
-
-
-	
 </body>
 </html>
