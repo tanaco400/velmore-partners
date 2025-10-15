@@ -105,7 +105,8 @@
     </div>
 
     <div class="form-section">
-    <form action="https://usebasin.com/f/9f7d1f130b70" method="POST">
+   <form action="https://usebasin.com/f/9f7d1f130b70" method="POST" onsubmit="return handleSubmit(event)">
+
 
 
  <!-- Options cachées -->
@@ -300,12 +301,16 @@ document.forms[0].addEventListener('submit', function(e) {
 </script>
 
 <script>
-document.forms[0].addEventListener('submit', function(e) {
+function handleSubmit(e) {
+  // Laisser le formulaire se soumettre normalement
   setTimeout(function() {
     window.location.href = "https://velmore-partners.org/merci.html";
-  }, 1500); // délai pour laisser UseBasin traiter
-});
+  }, 2000); // délai pour laisser UseBasin traiter
+  return true;
+}
 </script>
+
+
 
 	
 </body>
