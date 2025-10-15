@@ -235,6 +235,12 @@
   </div>
 </fieldset>
 
+<div id="confirmationMessage" style="display:none; margin-left:140px; margin-top:20px;">
+  <span style="font-weight:bold; color:green;">✔ Votre demande a été envoyée. Redirection en cours...</span>
+  <div style="margin-top:10px; width:100px; height:10px; background:#ccc; border-radius:5px; overflow:hidden;">
+    <div id="progressBar" style="width:0%; height:100%; background:#2a7ae2;"></div>
+  </div>
+</div>
 
 
    <input type="submit" value="Envoyer" onclick="prepareFinalFields()">
@@ -302,10 +308,25 @@ document.forms[0].addEventListener('submit', function(e) {
 
 <script>
 function handleSubmit(e) {
-  // Laisser le formulaire se soumettre normalement
+  const message = document.getElementById('confirmationMessage');
+  const progress = document.getElementById('progressBar');
+
+  // Affiche le message
+  message.style.display = 'block';
+
+  // Animation de la barre de progression
+  let width = 0;
+  const interval = setInterval(() => {
+    width += 5;
+    progress.style.width = width + '%';
+    if (width >= 100) clearInterval(interval);
+  }, 100); // 100ms x 20 = 2s
+
+  // Redirection après 2 secondes
   setTimeout(function() {
     window.location.href = "https://velmore-partners.org/merci.html";
-  }, 2000); // délai pour laisser UseBasin traiter
+  }, 2000);
+
   return true;
 }
 </script>
