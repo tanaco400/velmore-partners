@@ -1,16 +1,16 @@
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding-top: 220px; /* hauteur suffisante selon votre bandeau */
+  padding-top: 220px;
   background: #f4f4f4;
   color: #333;
-  font-size: 18px; /* Taille de texte augmentée */
+  font-size: 18px;
   line-height: 1.6;
 }
 
 /* Style général du header */
 header {
-  background-color: #008080; /* Teal */
+  background-color: #008080;
   color: white;
   text-align: center;
   padding: 40px 20px;
@@ -41,6 +41,7 @@ header h1 {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
 .logo-gauche img,
@@ -52,8 +53,8 @@ header h1 {
 }
 
 .logo-centre img {
-  height: 220px; /* Réduction de la taille */
-  margin-top: -20px; /* Remonté visuellement */
+  height: 220px;
+  margin-top: -20px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -72,36 +73,31 @@ header h1 {
 .logo-fixe-gauche,
 .logo-fixe-droite {
   position: fixed;
-  top: 60%; /* Positionné verticalement au milieu */
-  transform: translateY(-50%); /* Ajuste le positionnement vertical au centre exact */
+  top: 60%;
+  transform: translateY(-50%);
   z-index: 999;
 }
 
-/* Taille des logos fixes */
 .logo-fixe-gauche img,
 .logo-fixe-droite img {
-  width: 350px; /* Ajuste la taille */
+  width: 350px;
   height: auto;
   object-fit: contain;
 }
 
-/* Taille spécifique pour le logo fixe de droite */
 .logo-fixe-droite img {
-  width: 400px; /* Augmenter la taille */
+  width: 400px;
 }
 
-/* Logo à gauche */
 .logo-fixe-gauche {
-  left: 0; /* Positionné à gauche */
-  padding-left: 20px; /* Un petit espacement du bord */
+  left: 0;
+  padding-left: 20px;
 }
 
-/* Logo à droite */
 .logo-fixe-droite {
-  right: 0; /* Positionné à droite */
-  padding-right: 20px; /* Un petit espacement du bord */
+  right: 0;
+  padding-right: 20px;
 }
-
 
 /* Sections présentation & contact */
 .presentation, .contact {
@@ -115,7 +111,6 @@ header h1 {
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* Images dans présentation */
 .presentation img {
   max-width: 100px;
   margin: 10px;
@@ -146,34 +141,19 @@ button {
   transition: background-color 0.3s ease;
 }
 
-/* Style pour le menu déroulant */
 select {
-  height: 40px;  /* Ajuste la hauteur du champ */
-  font-size: 16px; /* Augmente la taille de la police */
-  padding: 10px;  /* Ajoute un peu de marge intérieure pour un meilleur confort */
-  border-radius: 4px; /* Bord arrondi pour un effet plus moderne */
-  border: 1px solid #ccc; /* Bordure douce */
-  background-color: #f5f5f5; /* Couleur de fond pour plus de lisibilité */
-  width: 100%; /* Permet au champ de prendre toute la largeur disponible (si nécessaire) */
-}
-
-/* Amélioration du style du bouton de soumission */
-button {
-  background-color: #005f73; /* Couleur de fond du bouton */
-  color: white;
-  padding: 12px 20px; /* Taille du bouton */
-  border: none;
-  border-radius: 5px;
+  height: 40px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  width: 100%;
 }
 
-/* Effet au survol du bouton */
 button:hover {
   background-color: #007b8a;
 }
-
 
 /* Pied de page */
 footer {
@@ -183,7 +163,6 @@ footer {
   color: white;
 }
 
-/* Nouveaux styles pour titres et contenu texte */
 .presentation h1 {
   font-size: 28px;
   color: #003366;
@@ -217,11 +196,7 @@ footer {
   font-size: 17px;
 }
 
-
-/* === FORMULAIRE ENRICHISSANT === */
-/* (styles spécifiques au formulaire complexe) */
-
-/* Mise en page du formulaire enrichi */
+/* Formulaire enrichi */
 .container {
   display: flex;
   flex-direction: row;
@@ -233,10 +208,9 @@ footer {
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   gap: 40px;
-  flex-wrap: wrap; /* Pour éviter les débordements sur petits écrans */
+  flex-wrap: wrap;
 }
 
-/* Section image à gauche */
 .image-section {
   flex: 1;
   padding-right: 40px;
@@ -252,35 +226,172 @@ footer {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-/* Section formulaire à droite */
 .form-section {
   flex: 1;
   padding-left: 40px;
 }
 
-/* Pour éviter que le formulaire soit trop étroit */
 .form-section form {
   max-width: 100%;
 }
 
-/* Pour rendre le site un peu plus responsive */
+/* ============================================ */
+/* MEDIA QUERIES - RESPONSIVE DESIGN */
+/* ============================================ */
+
+/* Tablettes et petits écrans (max 1024px) */
+@media (max-width: 1024px) {
+  /* Réduire les logos fixes */
+  .logo-fixe-gauche img,
+  .logo-fixe-droite img {
+    width: 200px;
+  }
+  
+  .logo-fixe-droite img {
+    width: 220px;
+  }
+  
+  /* Réduire le bandeau */
+  .bandeau {
+    padding: 15px 20px;
+  }
+  
+  .logo-gauche img,
+  .logo-droite img {
+    height: 180px;
+  }
+  
+  .logo-centre img {
+    height: 150px;
+  }
+  
+  body {
+    padding-top: 150px;
+  }
+  
+  .presentation, .contact {
+    padding: 30px 20px;
+    margin: 15px;
+  }
+}
+
+/* Tablettes en portrait et mobiles (max 768px) */
 @media (max-width: 768px) {
+  /* Cacher les logos fixes sur mobile */
+  .logo-fixe-gauche,
+  .logo-fixe-droite {
+    display: none;
+  }
+  
+  /* Réorganiser le bandeau en colonne */
+  .bandeau {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .logo-gauche img,
+  .logo-droite img {
+    height: 100px;
+  }
+  
+  .logo-centre img {
+    height: 120px;
+    margin-top: 0;
+  }
+  
+  body {
+    padding-top: 380px;
+    font-size: 16px;
+  }
+  
+  /* Adapter la présentation */
+  .presentation, .contact {
+    padding: 20px 15px;
+    margin: 10px;
+  }
+  
+  .presentation h1 {
+    font-size: 22px;
+  }
+  
+  .presentation h2 {
+    font-size: 20px;
+  }
+  
+  .presentation h3 {
+    font-size: 18px;
+  }
+  
+  /* Formulaire enrichi */
   .container {
     flex-direction: column;
     padding: 20px;
   }
 
-  .image-section, .form-section {
+  .image-section, 
+  .form-section {
     padding: 0;
+    width: 100%;
   }
 
   .image-section img {
     max-width: 100%;
-    height: auto;
     margin-bottom: 20px;
   }
+}
 
-  .form-section {
-    width: 100%;
+/* Petits mobiles (max 480px) */
+@media (max-width: 480px) {
+  body {
+    padding-top: 400px;
+    font-size: 14px;
+  }
+  
+  .bandeau {
+    padding: 8px;
+  }
+  
+  .logo-gauche img,
+  .logo-droite img {
+    height: 80px;
+  }
+  
+  .logo-centre img {
+    height: 100px;
+    padding: 5px;
+  }
+  
+  .presentation, .contact {
+    padding: 15px 10px;
+    margin: 5px;
+  }
+  
+  .presentation h1 {
+    font-size: 20px;
+  }
+  
+  .presentation h2 {
+    font-size: 18px;
+  }
+  
+  .presentation h3 {
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  form input, 
+  form textarea,
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
+  
+  .container {
+    padding: 10px;
   }
 }
