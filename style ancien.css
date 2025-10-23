@@ -1,0 +1,286 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 220px; /* hauteur suffisante selon votre bandeau */
+  background: #f4f4f4;
+  color: #333;
+  font-size: 18px; /* Taille de texte augmentée */
+  line-height: 1.6;
+}
+
+/* Style général du header */
+header {
+  background-color: #008080; /* Teal */
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+header h1 {
+  font-size: 2em;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Bandeau logos */
+.bandeau {
+  background-color: #C2B280;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo-gauche img,
+.logo-droite img {
+  height: 300px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.logo-centre img {
+  height: 220px; /* Réduction de la taille */
+  margin-top: -20px; /* Remonté visuellement */
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: brightness(0.95) contrast(1.05);
+  background-color: #f5f5dc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.logo-centre img:hover {
+  transform: scale(1.05);
+}
+
+/* Style pour les logos fixes */
+.logo-fixe-gauche,
+.logo-fixe-droite {
+  position: fixed;
+  top: 60%; /* Positionné verticalement au milieu */
+  transform: translateY(-50%); /* Ajuste le positionnement vertical au centre exact */
+  z-index: 999;
+}
+
+/* Taille des logos fixes */
+.logo-fixe-gauche img,
+.logo-fixe-droite img {
+  width: 350px; /* Ajuste la taille */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Taille spécifique pour le logo fixe de droite */
+.logo-fixe-droite img {
+  width: 400px; /* Augmenter la taille */
+}
+
+/* Logo à gauche */
+.logo-fixe-gauche {
+  left: 0; /* Positionné à gauche */
+  padding-left: 20px; /* Un petit espacement du bord */
+}
+
+/* Logo à droite */
+.logo-fixe-droite {
+  right: 0; /* Positionné à droite */
+  padding-right: 20px; /* Un petit espacement du bord */
+}
+
+
+/* Sections présentation & contact */
+.presentation, .contact {
+  padding: 40px;
+  background: white;
+  margin: 20px;
+  border-radius: 8px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Images dans présentation */
+.presentation img {
+  max-width: 100px;
+  margin: 10px;
+}
+
+/* Formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input, form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button {
+  background: #005f73;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style pour le menu déroulant */
+select {
+  height: 40px;  /* Ajuste la hauteur du champ */
+  font-size: 16px; /* Augmente la taille de la police */
+  padding: 10px;  /* Ajoute un peu de marge intérieure pour un meilleur confort */
+  border-radius: 4px; /* Bord arrondi pour un effet plus moderne */
+  border: 1px solid #ccc; /* Bordure douce */
+  background-color: #f5f5f5; /* Couleur de fond pour plus de lisibilité */
+  width: 100%; /* Permet au champ de prendre toute la largeur disponible (si nécessaire) */
+}
+
+/* Amélioration du style du bouton de soumission */
+button {
+  background-color: #005f73; /* Couleur de fond du bouton */
+  color: white;
+  padding: 12px 20px; /* Taille du bouton */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Effet au survol du bouton */
+button:hover {
+  background-color: #007b8a;
+}
+
+
+/* Pied de page */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+}
+
+/* Nouveaux styles pour titres et contenu texte */
+.presentation h1 {
+  font-size: 28px;
+  color: #003366;
+  margin-bottom: 20px;
+}
+
+.presentation h2,
+.presentation h3 {
+  color: #0055a5;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.presentation p {
+  margin-bottom: 15px;
+}
+
+.presentation ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  list-style-type: disc;
+}
+
+.presentation blockquote {
+  background-color: #eef3f7;
+  border-left: 4px solid #0055a5;
+  padding: 15px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #444;
+  font-size: 17px;
+}
+
+
+/* === FORMULAIRE ENRICHISSANT === */
+/* (styles spécifiques au formulaire complexe) */
+
+/* Mise en page du formulaire enrichi */
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1800px;
+  margin: auto;
+  padding: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  gap: 40px;
+  flex-wrap: wrap; /* Pour éviter les débordements sur petits écrans */
+}
+
+/* Section image à gauche */
+.image-section {
+  flex: 1;
+  padding-right: 40px;
+}
+
+.image-section img {
+  width: 100%;
+  max-width: 1099px;
+  height: auto;
+  aspect-ratio: 1099 / 913;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* Section formulaire à droite */
+.form-section {
+  flex: 1;
+  padding-left: 40px;
+}
+
+/* Pour éviter que le formulaire soit trop étroit */
+.form-section form {
+  max-width: 100%;
+}
+
+/* Pour rendre le site un peu plus responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .image-section, .form-section {
+    padding: 0;
+  }
+
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .form-section {
+    width: 100%;
+  }
+}
