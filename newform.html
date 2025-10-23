@@ -369,21 +369,22 @@ document.getElementById('mainForm').addEventListener('submit', function(e) {
     sendToGoogleSheets(formObject);
   }
   
-  // Envoyer vers UseBasin puis rediriger
-  sendToUseBasin(formObject)
-    .then(() => {
-      console.log('Données envoyées à UseBasin');
-      // Redirection après envoi réussi
-      setTimeout(function() {
-        window.location.href = "https://velmore-partners.org/merci.html";
-      }, 2000);
-    })
-    .catch((error) => {
-      console.error('Erreur UseBasin:', error);
-      // Redirection même en cas d'erreur (après 2 secondes)
-      setTimeout(function() {
-        window.location.href = "https://velmore-partners.org/merci.html";
-      }, 2000);
+ // Envoyer vers UseBasin puis rediriger
+sendToUseBasin(formObject)
+  .then(() => {
+    console.log('Données envoyées à UseBasin');
+    // Redirection après envoi réussi
+    setTimeout(function() {
+      window.location.href = "https://velmore-partners.org/merci.html";
+    }, 2000);
+  })
+  .catch((error) => {
+    console.error('Erreur UseBasin:', error);
+    // Redirection même en cas d'erreur (après 2 secondes)
+    setTimeout(function() {
+      window.location.href = "https://velmore-partners.org/merci.html";
+    }, 2000);
+  });
 });
 </script>
 
