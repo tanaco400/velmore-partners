@@ -249,7 +249,6 @@
 // ========================================
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyLSo-MCQVFWUUjJr-wBZYVCpxogcOL86rypamHWSigRZmh5lbGwwlMlGKZN7dzxQBN/exec';
 
-
 function toggleAutreMontant(select) {
   const champ = document.getElementById('champAutreMontant');
   champ.style.display = select.value === 'autre' ? 'flex' : 'none';
@@ -304,7 +303,7 @@ function prepareFinalFields() {
 
 // Fonction pour envoyer vers Google Sheets
 function sendToGoogleSheets(formData) {
-  fetch(GOOGLE_SCRIPT_URL, {
+  return fetch(GOOGLE_SCRIPT_URL, {
     method: 'POST',
     mode: 'no-cors',
     headers: {
@@ -317,6 +316,18 @@ function sendToGoogleSheets(formData) {
   })
   .catch((error) => {
     console.error('Erreur Google Sheets:', error);
+  });
+}
+
+// Fonction pour envoyer vers UseBasin
+function sendToUseBasin(formData) {
+  return fetch('https://usebasin.com/f/9f7d1f130b70', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(formData)
   });
 }
 
@@ -339,7 +350,11 @@ document.getElementById('mainForm').addEventListener('submit', function(e) {
   // Afficher le message de confirmation
   const message = document.getElementById('confirmationMessage');
   const progress = document.getElementById('progressBar');
+  const submitButton = document.querySelector('input[type="submit"]');
+  
   message.style.display = 'block';
+  submitButton.disabled = true;
+  submitButton.value = 'Envoi en cours...';
   
   // Animation de la barre de progression
   let width = 0;
@@ -354,13 +369,21 @@ document.getElementById('mainForm').addEventListener('submit', function(e) {
     sendToGoogleSheets(formObject);
   }
   
-  // Soumettre le formulaire vers UseBasin
-  this.submit();
-  
-  // Redirection après 2 secondes
-  setTimeout(function() {
-    window.location.href = "https://velmore-partners.org/merci.html";
-  }, 2000);
+  // Envoyer vers UseBasin puis rediriger
+  sendToUseBasin(formObject)
+    .then(() => {
+      console.log('Données envoyées à UseBasin');
+      // Redirection après envoi réussi
+      setTimeout(function() {
+        window.location.href = "https://velmore-partners.org/merci.html";
+      }, 2000);
+    })
+    .catch((error) => {
+      console.error('Erreur UseBasin:', error);
+      // Redirection même en cas d'erreur (après 2 secondes)
+      setTimeout(function() {
+        window.location.href = "https://velmore-partners.org/merci.html";
+      }, 2000);
 });
 </script>
 
