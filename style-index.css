@@ -1,0 +1,71 @@
+
+/* ============================= */
+/* INDEX - BASE GÉNÉRALE */
+/* ============================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 220px;
+  background: #f4f4f4;
+  color: #333;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+a {
+  color: #005f73;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* BANDEAU & LOGOS INDEX */
+/* ============================= */
+.bandeau {
+  background-color: #C2B280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  min-height: 180px;
+}
+
+.logo-gauche img,
+.logo-droite img {
+  height: 140px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-centre img {
+  height: 160px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: brightness(0.95) contrast(1.05);
+  background-color: #f5f5dc;
+  padding: 10px;
+  border-radius: 8px;
+}
+.logo-centre img:hover {
+  transform: scale(1.05);
+}
+
+/* ============================= */
+/* PIED DE PAGE INDEX */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}

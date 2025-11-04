@@ -1,0 +1,93 @@
+
+/* ============================= */
+/* COOKIES - BASE GÉNÉRALE */
+/* ============================= */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 180px;
+  background: #f4f4f4;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: #005f73;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* BANDEAU & LOGOS COOKIES */
+/* ============================= */
+.bandeau {
+  background-color: #C2B280;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-sizing: border-box;
+  min-height: 140px;
+}
+
+.logo-gauche img,
+.logo-droite img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-centre img {
+  height: 120px;
+  width: auto;
+  object-fit: contain;
+  background-color: #f5f5dc;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* ============================= */
+/* CONTENU COOKIES */
+/* ============================= */
+.rgpd-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.titre-cookies {
+  font-size: 1.4em;
+  color: #005f73;
+  margin-bottom: 30px;
+}
+
+.texte-cookies {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
+}
+
+/* ============================= */
+/* PIED DE PAGE COOKIES */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
