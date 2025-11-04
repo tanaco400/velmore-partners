@@ -20,25 +20,8 @@ a:hover {
 }
 
 /* ============================= */
-/* HEADER & BANDEAU */
+/* BANDEAU & LOGOS */
 /* ============================= */
-header {
-  background-color: #008080;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-}
-header h1 {
-  font-size: 2em;
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-.logo {
-  width: 120px;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
 .bandeau {
   background-color: #C2B280;
   display: flex;
@@ -53,23 +36,16 @@ header h1 {
   box-sizing: border-box;
 }
 
-/* ============================= */
-/* LOGOS */
-/* ============================= */
 .logo-gauche img,
 .logo-droite img {
-  height: 200px;
-  max-width: 100%;
+  height: 140px;
+  width: auto;
   object-fit: contain;
 }
+
 .logo-centre img {
-  height: 100px;
-}
-.logo-gauche img,
-.logo-droite img {
-  height: 80px;
-}
-  margin-top: -20px;
+  height: 160px;
+  width: auto;
   object-fit: contain;
   transition: transform 0.3s ease;
   filter: brightness(0.95) contrast(1.05);
@@ -81,267 +57,9 @@ header h1 {
   transform: scale(1.05);
 }
 
-/* Logos fixes latéraux */
-.logo-fixe-gauche,
-.logo-fixe-droite {
-  position: fixed;
-  top: 60%;
-  transform: translateY(-50%);
-  z-index: 999;
-}
-.logo-fixe-gauche {
-  left: 0;
-  padding-left: 10px;
-}
-.logo-fixe-droite {
-  right: 0;
-  padding-right: 10px;
-}
-.logo-fixe-gauche img,
-.logo-fixe-droite img {
-  width: 200px;
-  height: auto;
-  object-fit: contain;
-}
-.logo-fixe-droite img {
-  width: 220px;
-}
-
 /* ============================= */
-/* CONTENU PRINCIPAL */
+/* PAGE COOKIES / RGPD */
 /* ============================= */
-.presentation, .contact {
-  padding: 40px;
-  background: white;
-  margin: 20px auto;
-  border-radius: 8px;
-  max-width: 1000px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-.presentation img {
-  max-width: 100px;
-  margin: 10px;
-}
-.presentation h1 {
-  font-size: 28px;
-  color: #003366;
-  margin-bottom: 20px;
-}
-.presentation h2,
-.presentation h3 {
-  color: #0055a5;
-  margin-top: 30px;
-  margin-bottom: 15px;
-}
-.presentation p {
-  margin-bottom: 15px;
-}
-.presentation ul {
-  margin-left: 20px;
-  margin-bottom: 20px;
-  list-style-type: disc;
-}
-.presentation blockquote {
-  background-color: #eef3f7;
-  border-left: 4px solid #0055a5;
-  padding: 15px 20px;
-  margin: 20px 0;
-  font-style: italic;
-  color: #444;
-  font-size: 17px;
-}
-
-/* ============================= */
-/* FORMULAIRES */
-/* ============================= */
-form {
-  display: flex;
-  flex-direction: column;
-}
-form input,
-form textarea,
-select {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: #f5f5f5;
-  width: 100%;
-}
-button {
-  background: #005f73;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-button:hover {
-  background-color: #007b8a;
-}
-
-/* ============================= */
-/* FORMULAIRE ENRICHI */
-/* ============================= */
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1800px;
-  margin: auto;
-  padding: 40px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  gap: 40px;
-  flex-wrap: wrap;
-}
-.image-section {
-  flex: 1;
-  padding-right: 40px;
-}
-.image-section img {
-  width: 100%;
-  max-width: 1099px;
-  height: auto;
-  aspect-ratio: 1099 / 913;
-  object-fit: contain;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
-}
-.form-section {
-  flex: 1;
-  padding-left: 40px;
-}
-.form-section form {
-  max-width: 100%;
-}
-
-/* ============================= */
-/* FOOTER */
-/* ============================= */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-  font-size: 0.9em;
-}
-
-/* ============================= */
-/* RESPONSIVE DESIGN */
-/* ============================= */
-@media (max-width: 1024px) {
-  .logo-fixe-gauche img,
-  .logo-fixe-droite img {
-    width: 200px;
-  }
-  .bandeau {
-    padding: 15px 20px;
-  }
-  .logo-gauche img,
-  .logo-droite img {
-    height: 180px;
-  }
-  .logo-centre img {
-    height: 150px;
-  }
-  body {
-    padding-top: 150px;
-  }
-  .presentation, .contact {
-    padding: 30px 20px;
-    margin: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .logo-fixe-gauche,
-  .logo-fixe-droite {
-    display: none;
-  }
-  .bandeau {
-    flex-direction: column;
-    padding: 10px;
-    gap: 10px;
-  }
-  .logo-gauche img,
-  .logo-droite img {
-    height: 100px;
-  }
-  .logo-centre img {
-    height: 120px;
-    margin-top: 0;
-  }
-  body {
-    padding-top: 380px;
-    font-size: 16px;
-  }
-  .presentation, .contact {
-    padding: 20px 15px;
-    margin: 10px;
-  }
-  .presentation h1 {
-    font-size: 22px;
-  }
-  .presentation h2 {
-    font-size: 20px;
-  }
-  .presentation h3 {
-    font-size: 18px;
-  }
-  .container {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .image-section, 
-  .form-section {
-    padding: 0;
-    width: 100%;
-  }
-  .image-section img {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  body {
-    padding-top: 400px;
-    font-size: 14px;
-  }
-  .bandeau {
-    padding: 8px;
-  }
-  .logo-gauche img,
-  .logo-droite img {
-    height: 80px;
-  }
-  .logo-centre img {
-    height: 100px;
-    padding: 5px;
-  }
-  .presentation, .contact {
-    padding: 15px 10px;
-    margin: 5px;
-  }
-  .presentation h1 {
-    font-size: 20px;
-  }
-  .presentation h2 {
-    font-size: 18px;
-  }
-  .presentation h3 {
-    font-size: 16px;
-  }
-  button {
-    padding: 10px;
-    font-size:
-
-/* Page RGPD / Cookies */
 .rgpd-page {
   max-width: 900px;
   margin: 40px auto;
@@ -358,11 +76,85 @@ footer {
   margin-bottom: 30px;
 }
 
-.logo-centre img {
-  height: 100px;
+.texte-cookies {
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 700px;
 }
 
-.logo-gauche img,
-.logo-droite img {
-  height: 80px;
+/* ============================= */
+/* PIED DE PAGE */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
+
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
+@media (max-width: 1024px) {
+  .logo-gauche img,
+  .logo-droite img {
+    height: 100px;
+  }
+  .logo-centre img {
+    height: 120px;
+  }
+  .bandeau {
+    padding: 15px 20px;
+  }
+  body {
+    padding-top: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bandeau {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+  .logo-gauche img,
+  .logo-droite img {
+    height: 80px;
+  }
+  .logo-centre img {
+    height: 100px;
+  }
+  body {
+    padding-top: 300px;
+    font-size: 16px;
+  }
+  .rgpd-page {
+    padding: 20px 15px;
+  }
+  .texte-cookies {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-gauche img,
+  .logo-droite img {
+    height: 60px;
+  }
+  .logo-centre img {
+    height: 80px;
+  }
+  .titre-cookies {
+    font-size: 1.4em;
+  }
+  .texte-cookies {
+    font-size: 14px;
+  }
+  body {
+    padding-top: 320px;
+    font-size: 14px;
+  }
 }
