@@ -68,7 +68,7 @@ a:hover {
     background-color: #f5f5dc;
     padding: 15px;
     border-radius: 8px;
-    max-height: 190px;
+    max-height: 210px;
 }
 
 /* ============================= */
@@ -99,7 +99,7 @@ a:hover {
 }
 
 .logo-lateral img {
-    width: 180px;
+    width: 190px;
     height: auto;
     border-radius: 50%;
     box-shadow: 0 6px 12px rgba(0,0,0,0.2);
