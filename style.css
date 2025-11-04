@@ -20,25 +20,50 @@ a:hover {
 }
 
 /* ============================= */
-/* BANDEAU & LOGOS */
+/* LOGOS FIXES LATÉRAUX */
+/* ============================= */
+.logo-fixe-gauche,
+.logo-fixe-droite {
+  position: fixed;
+  top: 20px;
+  width: 120px;
+  z-index: 999;
+}
+
+.logo-fixe-gauche {
+  left: 20px;
+}
+
+.logo-fixe-droite {
+  right: 20px;
+}
+
+.logo-fixe-gauche img,
+.logo-fixe-droite img {
+  width: 100%;
+  height: auto;
+  max-height: 140px;
+  object-fit: contain;
+}
+
+/* ============================= */
+/* BANDEAU CENTRAL */
 /* ============================= */
 .bandeau {
   background-color: #C2B280;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 20px 40px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
+  padding: 30px 40px;
+  position: relative;
+  margin-top: 160px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  box-sizing: border-box;
 }
 
 .logo-gauche img,
+.logo-centre img,
 .logo-droite img {
-  height: 140px;
+  height: 160px;
   width: auto;
   object-fit: contain;
 }
@@ -55,6 +80,30 @@ a:hover {
 }
 .logo-centre img:hover {
   transform: scale(1.05);
+}
+
+/* ============================= */
+/* IMAGES DANS LE TEXTE */
+/* ============================= */
+.presentation img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+/* ============================= */
+/* SECTION PRÉSENTATION */
+/* ============================= */
+.presentation {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 /* ============================= */
