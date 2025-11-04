@@ -1,209 +1,514 @@
 /* ============================= */
 /* BASE GÉNÉRALE */
 /* ============================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding-top: 220px;
-  background: #f4f4f4;
-  color: #333;
-  font-size: 18px;
-  line-height: 1.6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 0;
+    background: #f4f4f4;
+    color: #333;
+    font-size: 18px;
+    line-height: 1.6;
 }
 
 a {
-  color: #005f73;
-  text-decoration: none;
+    color: #005f73;
+    text-decoration: none;
 }
+
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 /* ============================= */
-/* LOGOS FIXES LATÉRAUX */
+/* BANDEAU AVEC LES 3 LOGOS EN HAUT */
 /* ============================= */
-.logo-fixe-gauche,
-.logo-fixe-droite {
-  position: fixed;
-  top: 20px;
-  width: 120px;
-  z-index: 999;
+.bandeau-logos {
+    background: linear-gradient(135deg, #C2B280 0%, #d4c9a8 100%);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.logo-fixe-gauche {
-  left: 20px;
+.bandeau-logos .logo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
 }
 
-.logo-fixe-droite {
-  right: 20px;
+.bandeau-logos img {
+    max-height: 140px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
 
-.logo-fixe-gauche img,
-.logo-fixe-droite img {
-  width: 100%;
-  height: auto;
-  max-height: 140px;
-  object-fit: contain;
+.bandeau-logos img:hover {
+    transform: scale(1.05);
+}
+
+/* Style spécial pour le logo central dans le bandeau */
+.bandeau-logos .logo-container:nth-child(2) img {
+    filter: brightness(0.95) contrast(1.05);
+    background-color: #f5f5dc;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 /* ============================= */
-/* BANDEAU CENTRAL */
+/* WRAPPER POUR LE CONTENU ET LOGOS LATÉRAUX */
+/* ============================= */
+.content-wrapper {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* ============================= */
+/* LOGOS LATÉRAUX (Wyoming_03 et Wyoming_04) */
+/* ============================= */
+.logo-lateral {
+    position: absolute;
+    top: 100px;
+    z-index: 10;
+}
+
+.logo-lateral.gauche {
+    left: -180px;
+}
+
+.logo-lateral.droite {
+    right: -180px;
+}
+
+.logo-lateral img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.logo-lateral img:hover {
+    transform: scale(1.1);
+}
+
+/* ============================= */
+/* ANCIEN BANDEAU (conservé pour compatibilité) */
 /* ============================= */
 .bandeau {
-  background-color: #C2B280;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 30px 40px;
-  position: relative;
-  margin-top: 160px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background-color: #C2B280;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 30px 40px;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .logo-gauche img,
 .logo-centre img,
 .logo-droite img {
-  height: 160px;
-  width: auto;
-  object-fit: contain;
+    height: 160px;
+    width: auto;
+    object-fit: contain;
 }
 
 .logo-centre img {
-  height: 160px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-  filter: brightness(0.95) contrast(1.05);
-  background-color: #f5f5dc;
-  padding: 10px;
-  border-radius: 8px;
+    height: 160px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+    filter: brightness(0.95) contrast(1.05);
+    background-color: #f5f5dc;
+    padding: 10px;
+    border-radius: 8px;
 }
+
 .logo-centre img:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 /* ============================= */
-/* IMAGES DANS LE TEXTE */
+/* ANCIENS LOGOS FIXES (conservés pour compatibilité) */
 /* ============================= */
-.presentation img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 20px auto;
-  border-radius: 8px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+.logo-fixe-gauche,
+.logo-fixe-droite {
+    position: fixed;
+    top: 20px;
+    width: 120px;
+    z-index: 999;
+}
+
+.logo-fixe-gauche {
+    left: 20px;
+}
+
+.logo-fixe-droite {
+    right: 20px;
+}
+
+.logo-fixe-gauche img,
+.logo-fixe-droite img {
+    width: 100%;
+    height: auto;
+    max-height: 140px;
+    object-fit: contain;
 }
 
 /* ============================= */
 /* SECTION PRÉSENTATION */
 /* ============================= */
 .presentation {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 40px 60px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.presentation h1 {
+    color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.presentation h1:first-child {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.presentation h2 {
+    color: #34495e;
+    font-size: 1.8em;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+.presentation h3 {
+    color: #555;
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.presentation p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.presentation ul {
+    margin: 20px 0 20px 40px;
+}
+
+.presentation ul li {
+    color: #666;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+}
+
+.presentation blockquote {
+    background-color: #f9f9f9;
+    border-left: 4px solid #88B04B;
+    padding: 20px;
+    margin: 30px 0;
+    font-style: italic;
+}
+
+.presentation blockquote p {
+    margin: 0;
+}
+
+.presentation strong {
+    color: #2c3e50;
+}
+
+/* ============================= */
+/* IMAGES DANS LE TEXTE */
+/* ============================= */
+.presentation img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 /* ============================= */
 /* PAGE COOKIES / CONFIDENTIALITÉ */
 /* ============================= */
 .rgpd-page {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
-  text-align: center;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    text-align: center;
 }
 
 .titre-cookies {
-  font-size: 1.6em;
-  color: #005f73;
-  margin-bottom: 30px;
+    font-size: 1.6em;
+    color: #005f73;
+    margin-bottom: 30px;
 }
 
 .texte-cookies {
-  text-align: left;
-  font-size: 16px;
-  line-height: 1.6;
-  margin: 0 auto;
-  max-width: 700px;
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 700px;
 }
 
 /* ============================= */
 /* PIED DE PAGE */
 /* ============================= */
 footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-  font-size: 0.9em;
+    text-align: center;
+    padding: 40px 20px 20px;
+    background: #333;
+    color: white;
+    font-size: 0.9em;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    display: inline-block;
+    margin-bottom: 20px;
 }
 
 /* ============================= */
 /* RESPONSIVE DESIGN */
 /* ============================= */
+@media (max-width: 1600px) {
+    .logo-lateral.gauche {
+        left: -160px;
+    }
+    
+    .logo-lateral.droite {
+        right: -160px;
+    }
+    
+    .logo-lateral img {
+        width: 130px;
+    }
+}
+
+@media (max-width: 1400px) {
+    .content-wrapper {
+        max-width: 900px;
+    }
+    
+    .logo-lateral.gauche {
+        left: 20px;
+        top: 20px;
+    }
+    
+    .logo-lateral.droite {
+        right: 20px;
+        top: 20px;
+    }
+    
+    .logo-lateral img {
+        width: 100px;
+    }
+}
+
 @media (max-width: 1024px) {
-  .logo-gauche img,
-  .logo-droite img {
-    height: 100px;
-  }
-  .logo-centre img {
-    height: 120px;
-  }
-  .bandeau {
-    padding: 20px;
-  }
-  body {
-    padding-top: 180px;
-  }
+    .bandeau-logos img {
+        max-height: 110px;
+    }
+    
+    .logo-gauche img,
+    .logo-droite img {
+        height: 100px;
+    }
+    
+    .logo-centre img {
+        height: 120px;
+    }
+    
+    .bandeau {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 992px) {
+    .bandeau-logos {
+        padding: 20px;
+    }
+    
+    .bandeau-logos img {
+        max-height: 90px;
+    }
+    
+    .presentation {
+        padding: 40px 40px;
+    }
+    
+    .logo-lateral {
+        position: static;
+        display: inline-block;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .content-wrapper {
+        text-align: center;
+    }
+    
+    .logo-lateral img {
+        width: 90px;
+    }
 }
 
 @media (max-width: 768px) {
-  .bandeau {
-    flex-direction: column;
-    gap: 10px;
-    padding: 15px;
-  }
-  .logo-gauche img,
-  .logo-droite img {
-    height: 80px;
-  }
-  .logo-centre img {
-    height: 100px;
-  }
-  body {
-    padding-top: 300px;
-    font-size: 16px;
-  }
-  .rgpd-page {
-    padding: 20px 15px;
-  }
-  .texte-cookies {
-    font-size: 15px;
-  }
+    .bandeau-logos {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    .bandeau-logos .logo-container {
+        min-width: auto;
+    }
+    
+    .bandeau-logos img {
+        max-height: 80px;
+    }
+    
+    .bandeau {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+    
+    .logo-gauche img,
+    .logo-droite img {
+        height: 80px;
+    }
+    
+    .logo-centre img {
+        height: 100px;
+    }
+    
+    .content-wrapper {
+        margin: 30px auto;
+        padding: 0 15px;
+    }
+    
+    .presentation {
+        padding: 30px 20px;
+    }
+    
+    .presentation h1 {
+        font-size: 1.5em;
+    }
+    
+    .presentation h1:first-child {
+        font-size: 1.8em;
+    }
+    
+    .presentation h2 {
+        font-size: 1.4em;
+    }
+    
+    .presentation h3 {
+        font-size: 1.2em;
+    }
+    
+    .presentation p,
+    .presentation ul li {
+        font-size: 1em;
+    }
+    
+    .logo-lateral img {
+        width: 70px;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    .rgpd-page {
+        padding: 20px 15px;
+    }
+    
+    .texte-cookies {
+        font-size: 15px;
+    }
 }
 
 @media (max-width: 480px) {
-  .logo-gauche img,
-  .logo-droite img {
-    height: 60px;
-  }
-  .logo-centre img {
-    height: 80px;
-  }
-  .titre-cookies {
-    font-size: 1.4em;
-  }
-  .texte-cookies {
-    font-size: 14px;
-  }
-  body {
-    padding-top: 320px;
-    font-size: 14px;
-  }
+    .bandeau-logos img {
+        max-height: 60px;
+    }
+    
+    .logo-gauche img,
+    .logo-droite img {
+        height: 60px;
+    }
+    
+    .logo-centre img {
+        height: 80px;
+    }
+    
+    .presentation {
+        padding: 20px 15px;
+    }
+    
+    .presentation h1:first-child {
+        font-size: 1.5em;
+    }
+    
+    .presentation h1 {
+        font-size: 1.3em;
+    }
+    
+    .presentation h2 {
+        font-size: 1.2em;
+    }
+    
+    .presentation h3 {
+        font-size: 1.1em;
+    }
+    
+    .logo-lateral img {
+        width: 60px;
+    }
+    
+    .titre-cookies {
+        font-size: 1.4em;
+    }
+    
+    .texte-cookies {
+        font-size: 14px;
+    }
+    
+    body {
+        font-size: 14px;
+    }
 }
