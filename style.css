@@ -31,13 +31,14 @@ a:hover {
 /* ============================= */
 .bandeau-logos {
     background: linear-gradient(135deg, #C2B280 0%, #d4c9a8 100%);
-    padding: 30px 20px;
+    padding: 50px 20px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
+    min-height: 250px;
 }
 
 .bandeau-logos .logo-container {
@@ -45,11 +46,11 @@ a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 200px;
+    min-width: 250px;
 }
 
 .bandeau-logos img {
-    max-height: 140px;
+    max-height: 180px;
     max-width: 100%;
     width: auto;
     height: auto;
@@ -65,8 +66,9 @@ a:hover {
 .bandeau-logos .logo-container:nth-child(2) img {
     filter: brightness(0.95) contrast(1.05);
     background-color: #f5f5dc;
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
+    max-height: 190px;
 }
 
 /* ============================= */
@@ -83,24 +85,24 @@ a:hover {
 /* LOGOS LATÉRAUX (Wyoming_03 et Wyoming_04) */
 /* ============================= */
 .logo-lateral {
-    position: absolute;
-    top: 100px;
-    z-index: 10;
+    position: fixed;
+    top: 300px;
+    z-index: 100;
 }
 
 .logo-lateral.gauche {
-    left: -180px;
+    left: 30px;
 }
 
 .logo-lateral.droite {
-    right: -180px;
+    right: 30px;
 }
 
 .logo-lateral img {
-    width: 150px;
+    width: 180px;
     height: auto;
     border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
 }
 
@@ -306,15 +308,15 @@ footer a {
 /* ============================= */
 @media (max-width: 1600px) {
     .logo-lateral.gauche {
-        left: -160px;
+        left: 20px;
     }
     
     .logo-lateral.droite {
-        right: -160px;
+        right: 20px;
     }
     
     .logo-lateral img {
-        width: 130px;
+        width: 160px;
     }
 }
 
@@ -324,23 +326,30 @@ footer a {
     }
     
     .logo-lateral.gauche {
-        left: 20px;
-        top: 20px;
+        left: 15px;
     }
     
     .logo-lateral.droite {
-        right: 20px;
-        top: 20px;
+        right: 15px;
     }
     
     .logo-lateral img {
-        width: 100px;
+        width: 140px;
     }
 }
 
 @media (max-width: 1024px) {
+    .bandeau-logos {
+        padding: 40px 20px;
+        min-height: 220px;
+    }
+    
     .bandeau-logos img {
-        max-height: 110px;
+        max-height: 150px;
+    }
+    
+    .bandeau-logos .logo-container:nth-child(2) img {
+        max-height: 160px;
     }
     
     .logo-gauche img,
@@ -355,15 +364,24 @@ footer a {
     .bandeau {
         padding: 20px;
     }
+    
+    .logo-lateral img {
+        width: 120px;
+    }
 }
 
 @media (max-width: 992px) {
     .bandeau-logos {
-        padding: 20px;
+        padding: 30px 20px;
+        min-height: 200px;
     }
     
     .bandeau-logos img {
-        max-height: 90px;
+        max-height: 130px;
+    }
+    
+    .bandeau-logos .logo-container:nth-child(2) img {
+        max-height: 140px;
     }
     
     .presentation {
@@ -371,25 +389,23 @@ footer a {
     }
     
     .logo-lateral {
-        position: static;
-        display: inline-block;
-        margin: 10px auto;
-        text-align: center;
-    }
-    
-    .content-wrapper {
-        text-align: center;
+        position: fixed;
     }
     
     .logo-lateral img {
-        width: 90px;
+        width: 100px;
+    }
+    
+    .content-wrapper {
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 768px) {
     .bandeau-logos {
         flex-direction: column;
-        padding: 15px;
+        padding: 25px 15px;
+        min-height: auto;
     }
     
     .bandeau-logos .logo-container {
@@ -397,7 +413,11 @@ footer a {
     }
     
     .bandeau-logos img {
-        max-height: 80px;
+        max-height: 110px;
+    }
+    
+    .bandeau-logos .logo-container:nth-child(2) img {
+        max-height: 120px;
     }
     
     .bandeau {
@@ -445,8 +465,21 @@ footer a {
         font-size: 1em;
     }
     
+    .logo-lateral {
+        position: fixed;
+        top: 280px;
+    }
+    
+    .logo-lateral.gauche {
+        left: 10px;
+    }
+    
+    .logo-lateral.droite {
+        right: 10px;
+    }
+    
     .logo-lateral img {
-        width: 70px;
+        width: 80px;
     }
     
     body {
@@ -463,8 +496,16 @@ footer a {
 }
 
 @media (max-width: 480px) {
+    .bandeau-logos {
+        padding: 20px 10px;
+    }
+    
     .bandeau-logos img {
-        max-height: 60px;
+        max-height: 90px;
+    }
+    
+    .bandeau-logos .logo-container:nth-child(2) img {
+        max-height: 100px;
     }
     
     .logo-gauche img,
@@ -496,8 +537,20 @@ footer a {
         font-size: 1.1em;
     }
     
+    .logo-lateral {
+        top: 260px;
+    }
+    
+    .logo-lateral.gauche {
+        left: 5px;
+    }
+    
+    .logo-lateral.droite {
+        right: 5px;
+    }
+    
     .logo-lateral img {
-        width: 60px;
+        width: 65px;
     }
     
     .titre-cookies {
