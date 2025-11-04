@@ -58,12 +58,17 @@ header h1 {
 /* ============================= */
 .logo-gauche img,
 .logo-droite img {
-  height: 300px;
+  height: 200px;
   max-width: 100%;
   object-fit: contain;
 }
 .logo-centre img {
-  height: 220px;
+  height: 100px;
+}
+.logo-gauche img,
+.logo-droite img {
+  height: 80px;
+}
   margin-top: -20px;
   object-fit: contain;
   transition: transform 0.3s ease;
@@ -335,3 +340,29 @@ footer {
   button {
     padding: 10px;
     font-size:
+
+/* Page RGPD / Cookies */
+.rgpd-page {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.titre-cookies {
+  font-size: 1.6em;
+  color: #005f73;
+  margin-bottom: 30px;
+}
+
+.logo-centre img {
+  height: 100px;
+}
+
+.logo-gauche img,
+.logo-droite img {
+  height: 80px;
+}
