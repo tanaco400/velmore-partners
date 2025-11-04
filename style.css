@@ -1,3 +1,6 @@
+/* ============================= */
+/* BASE GÉNÉRALE */
+/* ============================= */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,28 +11,34 @@ body {
   line-height: 1.6;
 }
 
-/* Style général du header */
+a {
+  color: #005f73;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ============================= */
+/* HEADER & BANDEAU */
+/* ============================= */
 header {
   background-color: #008080;
   color: white;
   text-align: center;
   padding: 40px 20px;
 }
-
-.logo {
-  width: 120px;
-  height: auto;
-  display: block;
-  margin: 0 auto 20px auto;
-}
-
 header h1 {
   font-size: 2em;
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
 }
+.logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 20px auto;
+}
 
-/* Bandeau logos */
 .bandeau {
   background-color: #C2B280;
   display: flex;
@@ -44,19 +53,18 @@ header h1 {
   box-sizing: border-box;
 }
 
+/* ============================= */
+/* LOGOS */
+/* ============================= */
 .logo-gauche img,
 .logo-droite img {
   height: 300px;
-  width: auto;
   max-width: 100%;
   object-fit: contain;
 }
-
 .logo-centre img {
   height: 220px;
   margin-top: -20px;
-  width: auto;
-  max-width: 100%;
   object-fit: contain;
   transition: transform 0.3s ease;
   filter: brightness(0.95) contrast(1.05);
@@ -64,12 +72,11 @@ header h1 {
   padding: 10px;
   border-radius: 8px;
 }
-
 .logo-centre img:hover {
   transform: scale(1.05);
 }
 
-/* Style pour les logos fixes */
+/* Logos fixes latéraux */
 .logo-fixe-gauche,
 .logo-fixe-droite {
   position: fixed;
@@ -77,115 +84,58 @@ header h1 {
   transform: translateY(-50%);
   z-index: 999;
 }
-
+.logo-fixe-gauche {
+  left: 0;
+  padding-left: 10px;
+}
+.logo-fixe-droite {
+  right: 0;
+  padding-right: 10px;
+}
 .logo-fixe-gauche img,
 .logo-fixe-droite img {
   width: 200px;
   height: auto;
   object-fit: contain;
 }
-
 .logo-fixe-droite img {
   width: 220px;
 }
 
-.logo-fixe-gauche {
-  left: 0;
-  padding-left: 10px;
-}
-
-.logo-fixe-droite {
-  right: 0;
-  padding-right: 10px;
-}
-
-/* Sections présentation & contact */
+/* ============================= */
+/* CONTENU PRINCIPAL */
+/* ============================= */
 .presentation, .contact {
   padding: 40px;
   background: white;
-  margin: 20px;
+  margin: 20px auto;
   border-radius: 8px;
   max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
-
 .presentation img {
   max-width: 100px;
   margin: 10px;
 }
-
-/* Formulaire */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-form input, form textarea {
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
-
-button {
-  background: #005f73;
-  color: white;
-  padding: 12px;
-  border: none;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-select {
-  height: 40px;
-  font-size: 16px;
-  padding: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: #f5f5f5;
-  width: 100%;
-}
-
-button:hover {
-  background-color: #007b8a;
-}
-
-/* Pied de page */
-footer {
-  text-align: center;
-  padding: 20px;
-  background: #333;
-  color: white;
-}
-
 .presentation h1 {
   font-size: 28px;
   color: #003366;
   margin-bottom: 20px;
 }
-
 .presentation h2,
 .presentation h3 {
   color: #0055a5;
   margin-top: 30px;
   margin-bottom: 15px;
 }
-
 .presentation p {
   margin-bottom: 15px;
 }
-
 .presentation ul {
   margin-left: 20px;
   margin-bottom: 20px;
   list-style-type: disc;
 }
-
 .presentation blockquote {
   background-color: #eef3f7;
   border-left: 4px solid #0055a5;
@@ -196,7 +146,41 @@ footer {
   font-size: 17px;
 }
 
-/* Formulaire enrichi */
+/* ============================= */
+/* FORMULAIRES */
+/* ============================= */
+form {
+  display: flex;
+  flex-direction: column;
+}
+form input,
+form textarea,
+select {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #f5f5f5;
+  width: 100%;
+}
+button {
+  background: #005f73;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button:hover {
+  background-color: #007b8a;
+}
+
+/* ============================= */
+/* FORMULAIRE ENRICHI */
+/* ============================= */
 .container {
   display: flex;
   flex-direction: row;
@@ -210,12 +194,10 @@ footer {
   gap: 40px;
   flex-wrap: wrap;
 }
-
 .image-section {
   flex: 1;
   padding-right: 40px;
 }
-
 .image-section img {
   width: 100%;
   max-width: 1099px;
@@ -225,173 +207,131 @@ footer {
   border-radius: 8px;
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
-
 .form-section {
   flex: 1;
   padding-left: 40px;
 }
-
 .form-section form {
   max-width: 100%;
 }
 
-/* ============================================ */
-/* MEDIA QUERIES - RESPONSIVE DESIGN */
-/* ============================================ */
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: white;
+  font-size: 0.9em;
+}
 
-/* Tablettes et petits écrans (max 1024px) */
+/* ============================= */
+/* RESPONSIVE DESIGN */
+/* ============================= */
 @media (max-width: 1024px) {
-  /* Réduire les logos fixes */
   .logo-fixe-gauche img,
   .logo-fixe-droite img {
     width: 200px;
   }
-  
-  .logo-fixe-droite img {
-    width: 220px;
-  }
-  
-  /* Réduire le bandeau */
   .bandeau {
     padding: 15px 20px;
   }
-  
   .logo-gauche img,
   .logo-droite img {
     height: 180px;
   }
-  
   .logo-centre img {
     height: 150px;
   }
-  
   body {
     padding-top: 150px;
   }
-  
   .presentation, .contact {
     padding: 30px 20px;
     margin: 15px;
   }
 }
 
-/* Tablettes en portrait et mobiles (max 768px) */
 @media (max-width: 768px) {
-  /* Cacher les logos fixes sur mobile */
   .logo-fixe-gauche,
   .logo-fixe-droite {
     display: none;
   }
-  
-  /* Réorganiser le bandeau en colonne */
   .bandeau {
     flex-direction: column;
     padding: 10px;
     gap: 10px;
   }
-  
   .logo-gauche img,
   .logo-droite img {
     height: 100px;
   }
-  
   .logo-centre img {
     height: 120px;
     margin-top: 0;
   }
-  
   body {
     padding-top: 380px;
     font-size: 16px;
   }
-  
-  /* Adapter la présentation */
   .presentation, .contact {
     padding: 20px 15px;
     margin: 10px;
   }
-  
   .presentation h1 {
     font-size: 22px;
   }
-  
   .presentation h2 {
     font-size: 20px;
   }
-  
   .presentation h3 {
     font-size: 18px;
   }
-  
-  /* Formulaire enrichi */
   .container {
     flex-direction: column;
     padding: 20px;
   }
-
   .image-section, 
   .form-section {
     padding: 0;
     width: 100%;
   }
-
   .image-section img {
     max-width: 100%;
     margin-bottom: 20px;
   }
 }
 
-/* Petits mobiles (max 480px) */
 @media (max-width: 480px) {
   body {
     padding-top: 400px;
     font-size: 14px;
   }
-  
   .bandeau {
     padding: 8px;
   }
-  
   .logo-gauche img,
   .logo-droite img {
     height: 80px;
   }
-  
   .logo-centre img {
     height: 100px;
     padding: 5px;
   }
-  
   .presentation, .contact {
     padding: 15px 10px;
     margin: 5px;
   }
-  
   .presentation h1 {
     font-size: 20px;
   }
-  
   .presentation h2 {
     font-size: 18px;
   }
-  
   .presentation h3 {
     font-size: 16px;
   }
-  
   button {
     padding: 10px;
-    font-size: 14px;
-  }
-  
-  form input, 
-  form textarea,
-  select {
-    font-size: 14px;
-    padding: 8px;
-  }
-  
-  .container {
-    padding: 10px;
-  }
-}
+    font-size:
