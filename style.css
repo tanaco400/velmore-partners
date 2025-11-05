@@ -50,7 +50,7 @@ a:hover {
 }
 
 .bandeau-logos img {
-    max-height: 180px;
+    max-height: 250px;
     max-width: 100%;
     width: auto;
     height: auto;
@@ -68,7 +68,7 @@ a:hover {
     background-color: #f5f5dc;
     padding: 15px;
     border-radius: 8px;
-    max-height: 210px;
+    max-height: 280px;
 }
 
 /* ============================= */
@@ -363,11 +363,11 @@ footer a {
     }
     
     .bandeau-logos img {
-        max-height: 150px;
+        max-height: 200px;
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 160px;
+        max-height: 220px;
     }
     
     .logo-gauche img,
@@ -395,11 +395,11 @@ footer a {
     }
     
     .bandeau-logos img {
-        max-height: 130px;
+        max-height: 180px;
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 140px;
+        max-height: 200px;
     }
     
     .presentation {
@@ -431,11 +431,11 @@ footer a {
     }
     
     .bandeau-logos img {
-        max-height: 110px;
+        max-height: 150px;
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 120px;
+        max-height: 170px;
     }
     
     .bandeau {
@@ -519,11 +519,11 @@ footer a {
     }
     
     .bandeau-logos img {
-        max-height: 90px;
+        max-height: 120px;
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 100px;
+        max-height: 140px;
     }
     
     .logo-gauche img,
