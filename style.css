@@ -68,7 +68,7 @@ a:hover {
     background-color: #f5f5dc;
     padding: 15px;
     border-radius: 8px;
-    max-height: 280px;
+    max-height: 350px;
 }
 
 /* ============================= */
@@ -367,7 +367,7 @@ footer a {
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 220px;
+        max-height: 280px;
     }
     
     .logo-gauche img,
@@ -399,7 +399,7 @@ footer a {
     }
     
     .bandeau-logos .logo-container:nth-child(2) img {
-        max-height: 200px;
+        max-height: 260px;
     }
     
     .presentation {
